@@ -1,5 +1,6 @@
 import { Selector } from 'testcafe';
 import  { roleUser1 }  from './roles/roles';
+const env = require("./config/env.json");
 
 fixture.disablePageReloads `wekan : check version`
     .page (env.adress)
