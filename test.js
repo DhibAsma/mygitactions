@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import  { roleUser1 }  from '../roles/roles';
+import  { roleUser1 }  from './roles/roles';
 
 fixture.disablePageReloads `wekan : check version`
     .page (env.adress)
