@@ -1,17 +1,13 @@
-name: Super-Linter
-
-on: push
+name: Basic TestCafe Workflow
+on: [push]
 
 jobs:
-  super-lint:
-    name: Lint code base
-    runs-on: ubuntu-latest
+  build:
+    name: Run TestCafe Tests
+    runs-on: windows-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Install TestCafe from 'npm' and Run Tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "chrome test.js"
