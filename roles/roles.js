@@ -1,5 +1,5 @@
 import { Role } from 'testcafe';
-const env = require("../config/env.json");
+const env = require("./config/env.json");
 
 export const roleAdmin = Role(env.adress, async t => {
     await t
