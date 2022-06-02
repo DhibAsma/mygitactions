@@ -1,3 +1,4 @@
-let a = 37 ;  
-let c = 7 ;
-let x = a+c;
+const a = 37;
+const c = 7;
+const x = a+c;
+console.log(x);
