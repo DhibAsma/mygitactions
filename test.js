@@ -20,15 +20,16 @@ const env = require("./config/env.json");
 fixture.disablePageReloads `wekan : check version`
     .page (env.adress)
 
-    .beforeEach(async t => {
+
+    test.disablePageReloads('login as admin', async t => {
         await t
         .typeText('#at-field-username_and_email', 'admin')
         .pressKey('tab')
         .typeText('#at-field-password', 'adminadmin')
         .click('#at-btn');
-    });
+        });
 
-    test.disablePageReloads('check version : 1.7', async t => {
+    test.disablePageReloads('check version : '+env.wekanVersion, async t => {
         await t
         .click('#header-user-bar')
         .click(Selector('a.js-go-setting'))
