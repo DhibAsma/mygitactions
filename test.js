@@ -21,7 +21,7 @@ fixture.disablePageReloads `wekan : check version`
     .page (env.adress)
 
     .beforeEach(async t => {
-        await t.
+        await t
         .typeText('#at-field-username_and_email', 'admin')
         .pressKey('tab')
         .typeText('#at-field-password', 'adminadmin')
