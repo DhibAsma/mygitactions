@@ -6,6 +6,9 @@ jobs:
     name: Run TestCafe Tests
     runs-on: windows-latest
     steps:
+      - name: Run docker-compose
+        run: docker-compose up -d
+       
       - uses: actions/checkout@v1
       - name: Install TestCafe from 'npm' and Run Tests
         uses: DevExpress/testcafe-action@latest
