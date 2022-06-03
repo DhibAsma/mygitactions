@@ -11,7 +11,6 @@ test.disablePageReloads('check selected language is french (if not select it)', 
     .click('#identifierNext')
     .typeText(Selector('input.whsOnd.zHQkBf'), 'A20996665')
     .click('#passwordNext')
-    .click(Selector('div.T-I T-I-KE.L3'));
 });
 
 // import { Selector } from 'testcafe';
