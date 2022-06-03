@@ -4,7 +4,7 @@ on: [push]
 jobs:
   build:
     name: Run TestCafe Tests
-    runs-on: ubuntu-20.40
+    runs-on: ubuntu-latest
     steps:
       - name: Run docker-compose
         run: docker-compose up -d
