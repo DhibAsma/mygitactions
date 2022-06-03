@@ -1,16 +1,26 @@
-name: Basic TestCafe Workflow
-on: [push]
-
+name: Docker Compose Actions Workflow
+on: push
 jobs:
-  build:
-    name: Run TestCafe Tests
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run docker-compose
+      - uses: actions/checkout@v2
+      - name: Build the stack
         run: docker-compose up -d
+        
+# name: Basic TestCafe Workflow
+# on: [push]
+
+# jobs:
+#   build:
+#     name: Run TestCafe Tests
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Run docker-compose
+#         run: docker-compose up -d
        
-      - uses: actions/checkout@v1
-      - name: Install TestCafe from 'npm' and Run Tests
-        uses: DevExpress/testcafe-action@latest
-        with:
-          args: "chrome test.js"
+#       - uses: actions/checkout@v1
+#       - name: Install TestCafe from 'npm' and Run Tests
+#         uses: DevExpress/testcafe-action@latest
+#         with:
+#           args: "chrome test.js"
