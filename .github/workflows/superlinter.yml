@@ -6,8 +6,14 @@ jobs:
     name: Run TestCafe Tests
     runs-on: windows-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
       - uses: actions/checkout@v1
-      - name: Install TestCafe from 'npm' and Run Tests
+      - run: npm ci
+      - name: Install TestCafe
         uses: DevExpress/testcafe-action@latest
         with:
-          args: "chrome test.js"
+          args: '-v'
+      - name: Run custom runner
+        run: node runner.js
