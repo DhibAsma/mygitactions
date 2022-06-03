@@ -6,7 +6,11 @@ fixture.disablePageReloads `wekan : check version`
     .page (env.adress)
 
     .beforeEach(async t => {
-        await t.useRole(roleUser1);
+        await t.
+        .typeText('#at-field-username_and_email', 'admin')
+        .pressKey('tab')
+        .typeText('#at-field-password', 'adminadmin')
+        .click('#at-btn');
     });
 
     test.disablePageReloads('check version : 1.7', async t => {
